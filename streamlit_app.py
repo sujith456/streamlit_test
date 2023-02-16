@@ -1,18 +1,5 @@
-
-import pandas as pd 
-import streamlit as st 
 from st_aggrid import AgGrid
+import pandas as pd
 
-st.set_page_config(page_title="Netflix Shows", layout="wide") 
-st.title("Netlix shows analysis")
-
-data = {
-  "calories": [420, 380, 390],
-  "duration": [50, 40, 45]
-}
-
-#load data into a DataFrame object:
-shows = pd.DataFrame(data)
-
-
-st.table(shows)
+df = pd.read_csv('https://raw.githubusercontent.com/fivethirtyeight/data/master/airline-safety/airline-safety.csv')
+AgGrid(df)
